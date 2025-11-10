@@ -6,7 +6,7 @@ namespace Soenneker.Enums.Email.Format;
 /// An enumerator for email formats
 /// </summary>
 [Intellenum<string>]
-public partial class EmailFormat
+public sealed partial class EmailFormat
 {
     public static readonly EmailFormat Plaintext = new(nameof(Plaintext));
 
