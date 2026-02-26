@@ -1,11 +1,11 @@
-﻿using Intellenum;
+using Soenneker.Gen.EnumValues;
 
 namespace Soenneker.Enums.Email.Format;
 
 /// <summary>
 /// An enumerator for email formats
 /// </summary>
-[Intellenum<string>]
+[EnumValue<string>]
 public sealed partial class EmailFormat
 {
     public static readonly EmailFormat Plaintext = new(nameof(Plaintext));
