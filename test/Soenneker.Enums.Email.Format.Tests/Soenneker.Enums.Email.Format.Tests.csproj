@@ -27,7 +27,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\src\Soenneker.Enums.Email.Format.csproj" />
+        <ProjectReference Include="..\..\src\Soenneker.Enums.Email.Format\Soenneker.Enums.Email.Format.csproj" />
     </ItemGroup>
 
     <ItemGroup>
