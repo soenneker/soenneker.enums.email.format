@@ -3,18 +3,18 @@ using Soenneker.Gen.EnumValues;
 namespace Soenneker.Enums.Email.Format;
 
 /// <summary>
-/// An enumerator for email formats
+/// Identifies the markup format used for an email message body.
 /// </summary>
 [EnumValue<string>]
 public sealed partial class EmailFormat
 {
     /// <summary>
-    /// The plaintext.
+    /// Unformatted plain-text email content.
     /// </summary>
     public static readonly EmailFormat Plaintext = new(nameof(Plaintext));
 
     /// <summary>
-    /// The html.
+    /// HTML-formatted email content.
     /// </summary>
     public static readonly EmailFormat Html = new(nameof(Html));
 }
