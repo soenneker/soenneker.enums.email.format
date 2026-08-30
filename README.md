@@ -5,7 +5,7 @@
 
 # Soenneker.Enums.Email.Format
 
-Identifies the markup format used for an email message body.
+A string-backed enum-value type for marking an email body as plain text or HTML.
 
 ## Install
 
@@ -13,12 +13,25 @@ Identifies the markup format used for an email message body.
 dotnet add package Soenneker.Enums.Email.Format
 ```
 
-## What you get
+## Usage
 
-- `EmailFormat` — Identifies the markup format used for an email message body.
+```csharp
+using Soenneker.Enums.Email.Format;
 
-## API at a glance
+EmailFormat format = EmailFormat.Html;
+string wireValue = format.Value; // "Html"
 
-| API | What it does | Result / important behavior |
-| --- | --- | --- |
-| `EmailFormat.Plaintext` | Unformatted plain-text email content. | Unformatted plain-text email content. |
+if (EmailFormat.TryFromValue(input, out EmailFormat? parsed))
+{
+    // parsed is Plaintext or Html
+}
+```
+
+Available values:
+
+- `Plaintext` — unformatted text content
+- `Html` — HTML-formatted content
+
+`System.Text.Json` serializes the type as its string value and restores recognized values to the shared static instances. `FromValue` throws for unknown input; use `TryFromValue` at request and provider boundaries. `FromName` and `TryFromName` are also generated.
+
+This type labels the body format; it does not convert between formats or set a MIME content type by itself. The mail transport must map it to the correct body representation. When producing HTML, encode or sanitize untrusted values before interpolation; choosing `Html` does not make content safe.
